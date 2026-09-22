@@ -1,7 +1,7 @@
 import sys
 from src.graph import app
 
-def run_self_rag_demo():
+def run_reflect_rag_demo():
     print("=" * 60)
     
     config_limit = {"recursion_limit": 10}
@@ -41,4 +41,4 @@ def run_self_rag_demo():
     print("=" * 60)
 
 if __name__ == "__main__":
-    run_self_rag_demo()
+    run_reflect_rag_demo()

@@ -1,14 +1,14 @@
-# Self-RAG: Self-Reflective Retrieval-Augmented Generation
+# ReflectRAG: Self-Reflective Retrieval-Augmented Generation
 
-## What is Self-RAG?
+## What is ReflectRAG?
 
-Traditional RAG pipelines blindly retrieve documents and pass them to an LLM regardless of whether those documents are actually relevant. **Self-RAG** takes a smarter approach by grading the retrieved documents, evaluating the generated answer, and rewriting the query to retry if the result is not good enough.
+Traditional RAG pipelines blindly retrieve documents and pass them to an LLM regardless of whether those documents are actually relevant. **ReflectRAG** takes a smarter approach by grading the retrieved documents, evaluating the generated answer, and rewriting the query to retry if the result is not good enough.
 
-Introduced in [Asai et al., 2023](https://arxiv.org/abs/2310.11511), Self-RAG uses *reflection tokens* that allow a model to decide when to retrieve, assess document relevance, and verify that its generated answer is factually grounded. This implementation approximates that framework using LLM-based graders at each decision point rather than fine-tuned reflection tokens, and models the full loop as a stateful directed graph using **LangGraph**.
+Introduced in [Asai et al., 2023](https://arxiv.org/abs/2310.11511), ReflectRAG uses *reflection tokens* that allow a model to decide when to retrieve, assess document relevance, and verify that its generated answer is factually grounded. This implementation approximates that framework using LLM-based graders at each decision point rather than fine-tuned reflection tokens, and models the full loop as a stateful directed graph using **LangGraph**.
 
 ---
 
-Self-RAG is an AI-powered question-answering system that goes beyond traditional RAG by actively evaluating and critiquing its own outputs. Built with **LangGraph**, **LangChain**, **ChromaDB**, and **Google Gemini**, it delivers grounded, hallucination-resistant responses through a stateful, self-correcting pipeline.
+ReflectRAG is an AI-powered question-answering system that goes beyond traditional RAG by actively evaluating and critiquing its own outputs. Built with **LangGraph**, **LangChain**, **ChromaDB**, and **Google Gemini**, it delivers grounded, hallucination-resistant responses through a stateful, self-correcting pipeline.
 
 ---
 
@@ -73,7 +73,7 @@ User Question
 ## Project Structure
 
 ```
-Self-RAG/
+ReflectRAG/
 ├── main.py              # Entry point, runs two demo scenarios
 ├── requirements.txt     # Python dependencies
 └── src/
@@ -113,8 +113,8 @@ python-dotenv
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Sahil-kumar2/Self-RAG.git
-cd Self-RAG
+git clone https://github.com/Sahil-kumar2/ReflectRAG.git
+cd ReflectRAG
 ```
 
 ### 2. Create and activate a virtual environment
@@ -156,9 +156,9 @@ The `recursion_limit` parameter in `main.py` controls how many times the graph c
 
 ## 📚 References
 
-- [Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection](https://arxiv.org/abs/2310.11511) by Asai et al., 2023
+- [ReflectRAG: Learning to Retrieve, Generate, and Critique through Self-Reflection](https://arxiv.org/abs/2310.11511) by Asai et al., 2023
 - [LangGraph Documentation](https://langchain-ai.github.io/langgraph/)
-- [LangChain Self-RAG Tutorial](https://langchain-ai.github.io/langgraph/tutorials/rag/langgraph_self_rag/)
+- [LangChain ReflectRAG Tutorial](https://langchain-ai.github.io/langgraph/tutorials/rag/langgraph_self_rag/)
 
 ---
 
